@@ -48,6 +48,9 @@ class PrototypesController < ApplicationController
   end
 
   private
+  def set_comment
+    @prototype = Prototype.find(params[:id])
+  end
 
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)

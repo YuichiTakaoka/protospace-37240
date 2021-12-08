@@ -5,11 +5,12 @@ class CommentsController < ApplicationController
       redirect_to prototype_path(@comment.prototype)
     else
       @prototype = @comment.prototype
-      @comments = @prototype.comments
+      @comment = @prototype.comments
       render "prototypes/show"
     end
   end
 
+  
   private
 
   def comment_params
